@@ -1,0 +1,23 @@
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+    var numbers = digits;
+    while(true){
+        var i = 1;
+        console.log(numbers)
+        if(numbers[numbers.length-i] == 9){
+            numbers[numbers.length-i]++;
+            i++;
+        }else{
+            numbers[numbers.length-i]++;
+            break
+        }
+    }
+    return numbers;
+    
+    //someone else's code
+    //return (BigInt(digits.join(""))+BigInt(1)).toString().split("")
+    //😲
+};
