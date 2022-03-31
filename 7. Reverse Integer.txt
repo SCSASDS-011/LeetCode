@@ -1,20 +1,8 @@
 /**
- * @param {number} n
- * @return {string[]}
+ * @param {number} x
+ * @return {number}
  */
-var fizzBuzz = function(n) {
-    var answer = [];
-    
-    for(var i = 1; i <= n; i++){
-        if(i % 3 == 0 && i % 5 != 0){
-            answer.push('Fizz');
-        }else if(i % 3 != 0 && i % 5 == 0){
-            answer.push('Buzz');
-        }else if(i % 3 == 0 && i % 5 == 0){
-            answer.push('FizzBuzz');
-        }else{
-            answer.push(i+"");
-        }
-    }
-    return answer;
+var reverse = function(x) {
+    var result = Math.abs(x).toString().split('').reverse().join('');
+    return result > 0x7FFFFFFF ? 0 : x < 0 ? result * -1 : result; 
 };
