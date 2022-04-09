@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permute = function(nums) {
+    var result = [];
+    dfs(result, [], nums);
+    return result;
+};
+
+var dfs = function(result, arr, nums){
+    if(arr.length == nums.length){
+        result.push([...arr]);
+        return;
+    }
+
+    for(var i = 0; i < nums.length; i++){
+        if(!arr.includes(nums[i])){
+            dfs(result, [...arr, nums[i]], nums);
+        }
+    }
+}
