@@ -20,3 +20,9 @@ var dfs = function(result, arr, nums){
         }
     }
 }
+
+// ...문법을 배울 수 있었음
+// 아래와 같이 변수를 선언했을 때 result의 값이 변경되면 a의 값도 같이 변경되나, b의 값은 기존 result의 값을 유지함
+// var result = [1, 2, 3, 4, 5]
+// var a = result
+// var b = [...result]
