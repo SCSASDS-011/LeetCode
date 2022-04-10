@@ -1,0 +1,22 @@
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isHappy = function(n) {
+    var set = new Set();
+    
+    while(true){
+        if(n == 1){
+            return true;
+        }
+        if(set.has(n)){
+            return false;
+        }else{
+            set.add(n)
+        }
+        //reduce함수 연습
+        //accum에 curr제곱을 합산한 누적값을 전달
+        //뒤에  0은 초기값(없으면 오류발생)
+        n = n.toString().split('').reduce((accum, curr) => accum + curr**2, 0);
+    }
+};
