@@ -1,0 +1,23 @@
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {number[][]}
+ */
+var combine = function(n, k) {
+    var result = [];
+    
+    function backTracking(idx, arr){
+        if(arr.length == k){
+            result.push(Array.from(arr));
+        }else{
+            for(var i = idx; i <= n; i++){
+                arr.push(i);
+                backTracking(i + 1, arr);
+                arr.pop();
+            }
+        }
+    }
+    
+    backTracking(1, []);
+    return result;
+};
