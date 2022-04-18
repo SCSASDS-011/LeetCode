@@ -1,0 +1,24 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var longestConsecutive = function(nums) {
+    if(nums.length < 2){
+        return nums.length;
+    }
+    var numSet = new Set(nums);
+    var result = 0;
+    var temp = 0;
+    for(var number of numSet){
+        temp = 0;
+        if(!numSet.has(number - 1)){
+            temp++;
+            while(numSet.has(number + 1)){
+                temp++;
+                number++;
+            }
+        }
+        result = Math.max(temp, result);
+    }
+    return result;
+};
